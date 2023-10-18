@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { useEffect, useState } from "react";
+import ShowProduct from "./ShowProduct";
 
 const BrandDetails = () => {
     const data = useLoaderData();
@@ -21,11 +22,11 @@ const BrandDetails = () => {
 
 
     return (
-        <div>
-            <div>
+        <div className="">
+            <div className="">
                 {
-                    data.length ? <div>
-                        <div>
+                    data.length ? <div className="">
+                        <div className="mx-4 md:mx-14">
                             <Swiper
                                 slidesPerView={1}
                                 spaceBetween={30}
@@ -57,7 +58,11 @@ const BrandDetails = () => {
                                 }
                             </Swiper>
                         </div>
-                        <h3>details comming soon: {data.length}</h3>
+                        <div className="py-6 grid grid-cols-1 md:grid-cols-2 gap-4 w-11/12 mx-auto">
+                            {
+                                data.map(dataInfo => <ShowProduct key={dataInfo._id} dataInfo={dataInfo}></ShowProduct>)
+                            }
+                        </div>
                     </div> : 'No data found'
                 }
             </div>
