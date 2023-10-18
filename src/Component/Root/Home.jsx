@@ -1,5 +1,6 @@
 import Marquee from "react-fast-marquee";
 import { useLoaderData } from "react-router-dom";
+import ShowBrand from "../../Other Component/ShowBrand";
 
 const Home = () => {
     const brandInfo = useLoaderData();
@@ -38,9 +39,9 @@ const Home = () => {
                     </Marquee>
                 </div>
 
-                    <div>
+                    <div className="py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         {
-                            brandInfo.length
+                            brandInfo.map(brand => <ShowBrand key={brand.name} brand={brand}></ShowBrand>)
                         }
                     </div>
 

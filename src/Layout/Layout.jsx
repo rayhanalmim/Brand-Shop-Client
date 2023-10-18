@@ -5,6 +5,7 @@ import SingIn from "../Component/Authentication/SingIn";
 import SingUp from "../Component/Authentication/SingUp";
 import ErrorPage from "../Component/Root/ErrorPage";
 import AddProduct from "../Other Component/AddProduct";
+import BrandDetails from "../Other Component/BrandDetails";
 
 const Layout = createBrowserRouter([
     {
@@ -29,6 +30,11 @@ const Layout = createBrowserRouter([
                 path:'/add',
                 element:<AddProduct></AddProduct>
             },
+            {
+                path:'/brand/:name',
+                element:<BrandDetails></BrandDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/product/${params.name}`)
+            }
         ]
     }
 ]);

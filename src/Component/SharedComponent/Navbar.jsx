@@ -47,7 +47,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex gap-3">
-                    <img className="w-40" src="https://i.ibb.co/6rjd1zR/Micron-Technology-logo-svg.png" alt="" />
+                    <img className="w-36" src="https://i.ibb.co/6rjd1zR/Micron-Technology-logo-svg.png" alt="" />
                     <div className="flex justify-center items-center">
                     <h3 className="font-bold text-3xl hidden md:block">Tech Services</h3>
                     </div>
