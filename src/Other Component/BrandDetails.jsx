@@ -11,7 +11,6 @@ import ShowProduct from "./ShowProduct";
 const BrandDetails = () => {
     const data = useLoaderData();
     const { name } = useParams();
-    console.log(name);
     const [advinig, setAdvisig] = useState([]);
 
     useEffect(() => {

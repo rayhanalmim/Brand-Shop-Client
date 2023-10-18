@@ -8,6 +8,7 @@ import AddProduct from "../Other Component/AddProduct";
 import BrandDetails from "../Other Component/BrandDetails";
 import ProductDetails from "../Other Component/ProductDetails";
 import UpdateProduct from "../Other Component/UpdateProduct";
+import MyCard from "../Other Component/MyCard";
 
 const Layout = createBrowserRouter([
     {
@@ -46,6 +47,11 @@ const Layout = createBrowserRouter([
                 path:'/update/:id',
                 element:<UpdateProduct></UpdateProduct>,
                 loader: ({params}) => fetch(`http://localhost:5000/update/${params.id}`),
+            },
+            {
+                path:'/card',
+                element:<MyCard></MyCard>,
+                
             }
         ]
     }
