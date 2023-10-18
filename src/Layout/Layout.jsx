@@ -40,10 +40,12 @@ const Layout = createBrowserRouter([
             {
                 path:'/productDetails/:id',
                 element:<ProductDetails></ProductDetails>,
+                loader: ({params}) => fetch(`http://localhost:5000/productDetails/${params.id}`)
             },
             {
                 path:'/update/:id',
                 element:<UpdateProduct></UpdateProduct>,
+                loader: ({params}) => fetch(`http://localhost:5000/update/${params.id}`),
             }
         ]
     }
