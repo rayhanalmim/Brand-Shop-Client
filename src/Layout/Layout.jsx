@@ -51,7 +51,7 @@ const Layout = createBrowserRouter([
             {
                 path:'/card',
                 element:<MyCard></MyCard>,
-                
+                loader: ()=> fetch('http://localhost:5000/card'),
             }
         ]
     }
