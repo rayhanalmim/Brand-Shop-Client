@@ -1,6 +1,6 @@
 import { ToastContainer, toast } from "react-toastify";
 import { BsFillBookmarkPlusFill } from 'react-icons/bs';
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Component/Authentication/AuthProvider";
 import Swal from "sweetalert2";
@@ -10,7 +10,6 @@ const ProductDetails = () => {
     const [card, setCard] = useState([]);
     const [temp, setTemp] = useState(false);
     const data = useLoaderData();
-    const {id} = useParams();
 
     const UserEmail = user.email;
 
@@ -18,13 +17,17 @@ const ProductDetails = () => {
 
     const handleClick = () => {
         console.log('handle')
+        newData._id = newData._id + UserEmail;
+        console.log(newData)
 
-        if(card.find(obj => obj._id == id)){
+        if(card.find(obj => obj._id == newData._id)){
             return  toast.error('Item already added', {
                 position: "top-left",
                 theme: "dark",
             });
         }
+
+
 
         fetch('https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/card', {
             method: 'POST',

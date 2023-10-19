@@ -10,7 +10,6 @@ const MyCard = () => {
 
     const { user } = useContext(AuthContext);
     const email = user.email;
-    console.log(email);
 
     useEffect(() => {
         fetch(`https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/card/${email}`, {
