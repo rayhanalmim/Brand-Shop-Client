@@ -14,9 +14,8 @@ const UpdateProduct = () => {
         const price = form.price.value;
         const photoUrl = form.url.value;
         const rating = form.number.value;
-        const productDetails = form.about.value;
 
-        const data = { productName, category, company, price, photoUrl, rating, productDetails };
+        const data = { productName, category, company, price, photoUrl, rating };
 
         console.log(data)
         fetch(`http://localhost:5000/product/${product._id}`, {
@@ -41,7 +40,6 @@ const UpdateProduct = () => {
                     form.price.value = '';
                     form.url.value = '';
                     form.number.value = '';
-                    form.about.value = '';
                 }
             })
     }
@@ -75,10 +73,6 @@ const UpdateProduct = () => {
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Avalable quantity</label>
                         <input defaultValue={product.rating} type="number" name='number' id="rating" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="rating" required />
                     </div>
-                </div>
-                <div className="mb-6">
-                    <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">About product</label>
-                    <input defaultValue={product.productDetails} type="text" id="text" name="about" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="details" required />
                 </div>
                 <button type="submit" className="bg-gray-600 hover:bg-gray-900 border text-white text-lg font-semibold  rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="john.doe@company.com">Update</button>
 

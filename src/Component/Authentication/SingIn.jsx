@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useRef, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { FcGoogle } from 'react-icons/fc';
@@ -7,10 +7,15 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "./AuthProvider";
 
 const SingIn = () => {
-
+    const location = useLocation();
+    const navigate = useNavigate();
     const emailRef = useRef(null);
-    const { singIn, singInWithGoogle } = useContext(AuthContext);
+    const { singIn, singInWithGoogle, looding} = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(false);
+
+    if (looding) {
+        return <div className="flex justify-center"><span className="loading loading-spinner loading-md"></span></div>;
+    }
 
 
     const handleLogIn = (e) => {
@@ -25,6 +30,8 @@ const SingIn = () => {
                     position: "top-left",
                     theme: "dark",
                 });
+                e.target.reset();
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 const errorMessage = error.message;
@@ -45,6 +52,7 @@ const SingIn = () => {
                     position: "top-left",
                     theme: "dark",
                 });
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 const errorMessage = error.message;

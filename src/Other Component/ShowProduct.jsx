@@ -14,7 +14,7 @@ const ShowProduct = ({ dataInfo }) => {
                 <div className="">
                     <p><span className='font-semibold'>Brand Name:</span> {dataInfo.company}</p>
                 </div>
-                    <h3><span className='font-semibold'>Cost:</span> {dataInfo.price}</h3>
+                    <h3><span className='font-semibold'>Price:</span> {dataInfo.price}</h3>
                     <h3><span className='font-semibold'>Type:</span> {dataInfo.category}</h3>
                 <div>
                     <div>
@@ -26,7 +26,7 @@ const ShowProduct = ({ dataInfo }) => {
                         />
                     </div>
                 </div>
-                <div className='flex justify-between mr-7'>
+                <div className='flex justify-between mr-2 md:mr-7'>
                     <Link to={`/productDetails/${dataInfo._id}`}><button className='btn btn-active btn-neutral btn-sm'>details</button></Link>
                     <Link to={`/update/${dataInfo._id}`}><button className='btn btn-active btn-neutral btn-sm'>update</button></Link>
                 </div>

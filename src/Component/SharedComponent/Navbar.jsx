@@ -12,8 +12,12 @@ const Navbar = () => {
 
     const navLink = <>
         <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/add'>Add Product</NavLink></li>
-        <li><NavLink to='/card'>My Card</NavLink></li>
+        {
+            user && <li><NavLink to='/add'>Add Product</NavLink></li>
+        }
+        {
+            user && <li><NavLink to='/card'>My Card</NavLink></li>
+        }
         <li><NavLink to='/login'>Login</NavLink></li>
     </>
 
@@ -47,9 +51,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="flex gap-3">
-                    <img className="w-36" src="https://i.ibb.co/6rjd1zR/Micron-Technology-logo-svg.png" alt="" />
+                    <img className="w-24 xl:w-32" src="https://i.ibb.co/6rjd1zR/Micron-Technology-logo-svg.png" alt="" />
                     <div className="flex justify-center items-center">
-                    <h3 className="font-bold text-3xl hidden md:block">Tech Services</h3>
+                    <h3 className="font-bold text-2xl xl:text-3xl hidden md:block">Tech Services</h3>
                     </div>
                 </div>
             </div>

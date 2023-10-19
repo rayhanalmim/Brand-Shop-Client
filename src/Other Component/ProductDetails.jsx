@@ -1,15 +1,19 @@
 import { ToastContainer, toast } from "react-toastify";
 import { BsFillBookmarkPlusFill } from 'react-icons/bs';
 import { useLoaderData, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../Component/Authentication/AuthProvider";
 
 const ProductDetails = () => {
+    const {user} = useContext(AuthContext);
     const [card, setCard] = useState([]);
     const [temp, setTemp] = useState(false);
     const data = useLoaderData();
     const {id} = useParams();
-    console.log(id);
-    console.log(data)
+
+    const UserEmail = user.email;
+
+    const newData = {...data, UserEmail}; 
 
     const handleClick = () => {
         console.log('handle')
@@ -26,7 +30,7 @@ const ProductDetails = () => {
             headers: {
                 'content-type': 'application/json',
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify(newData),
         })
             .then(res => res.json())
             .then(result => {
@@ -49,8 +53,6 @@ const ProductDetails = () => {
           .then(res => res.json())
           .then(result => setCard(result));      
     },[temp]);
-
-    console.log(card);
 
     return (
         <div className="w-11/12 mx-auto mt-7">
