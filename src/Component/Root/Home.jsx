@@ -49,6 +49,17 @@ const Home = () => {
                 </div>
 
             </div>
+
+            <div data-aos="zoom-in" className="w-11/12 mx-auto py-5 space-y-1">
+                <h3 className="text-2xl font-medium">Get more updates...</h3>
+                <p>Do you want to get notified when we added something new? Sign up for our newsletter and youll be among the first to find out about new services, updated and more.</p>
+                <div className="flex gap-4 pt-1">
+                    <div className="">
+                        <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full md:w-80 p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Your Email Address" required />
+                    </div>
+                    <button className="bg-blue-800 px-4 rounded-lg text-white">Subscribe</button>
+                </div>
+            </div>
             {/* ---------------footer-------------- */}
             <footer className="footer mt-6 p-10 bg-neutral text-neutral-content">
                 <aside>

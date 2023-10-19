@@ -3,6 +3,7 @@ import { BsFillBookmarkPlusFill } from 'react-icons/bs';
 import { useLoaderData, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Component/Authentication/AuthProvider";
+import Swal from "sweetalert2";
 
 const ProductDetails = () => {
     const {user} = useContext(AuthContext);
@@ -25,7 +26,7 @@ const ProductDetails = () => {
             });
         }
 
-        fetch('http://localhost:5000/card', {
+        fetch('https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/card', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -37,10 +38,11 @@ const ProductDetails = () => {
                 console.log(result);
                 if (result.acknowledged) {
 
-                    toast.success('Item added successfully', {
-                        position: "top-left",
-                        theme: "dark",
-                    });
+                    Swal.fire(
+                        'Added!',
+                        'Item has been Added.',
+                        'success'
+                    )
                 }
                 setTemp(true);
             })
@@ -49,13 +51,13 @@ const ProductDetails = () => {
     }
 
     useEffect(()=>{
-          fetch('http://localhost:5000/card')
+          fetch('https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/card')
           .then(res => res.json())
           .then(result => setCard(result));      
     },[temp]);
 
     return (
-        <div className="w-11/12 mx-auto mt-7 pb-[20vh]">
+        <div className="w-11/12 mx-auto mt-7 pb-6 md:pb-[30vh]">
             <div className="flex flex-col-reverse md:flex-row gap-4">
 
                 <div className="space-y-2 flex-1">

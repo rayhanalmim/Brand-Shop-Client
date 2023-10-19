@@ -1,5 +1,6 @@
 .active{
     background-color: darkblue !important;
+    font-weight: 600;
 }
 .active:hover{
     border-radius: 5px !important;

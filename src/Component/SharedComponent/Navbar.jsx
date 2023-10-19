@@ -5,6 +5,7 @@ import { ToastContainer, toast } from "react-toastify";
 import PropTypes from 'prop-types';
 import { DarkContext } from "../Root/Root";
 import './navLink.css';
+import { MdDarkMode, MdOutlineLightMode } from 'react-icons/md';
 
 const Navbar = ({toggleMode}) => {
     const { user, logOut, looding } = useContext(AuthContext);
@@ -67,8 +68,10 @@ const Navbar = ({toggleMode}) => {
                 </ul>
             </div>
             <div className="navbar-end">
-            <button onClick={toggleMode} className="mode-toggle">
-                    Toggle Mode
+            <button onClick={toggleMode} className={`mode-toggle ${user ? '' : 'pr-5'}`}>
+                    {
+                        isDarkMode ?  <MdOutlineLightMode className="text-2xl"></MdOutlineLightMode> : <MdDarkMode className="text-2xl"></MdDarkMode>
+                    }
                 </button>
                 <div className="hidden md:block">
                     {

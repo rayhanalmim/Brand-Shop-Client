@@ -14,7 +14,7 @@ const BrandDetails = () => {
     const [advinig, setAdvisig] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/advisig/${name}`)
+        fetch(`https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/advisig/${name}`)
             .then(res => res.json())
             .then(result => setAdvisig(result))
     }, []);
