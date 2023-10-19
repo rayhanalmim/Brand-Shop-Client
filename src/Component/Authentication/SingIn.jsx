@@ -5,8 +5,10 @@ import { FcGoogle } from 'react-icons/fc';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "./AuthProvider";
+import { DarkContext } from "../Root/Root";
 
 const SingIn = () => {
+    const {isDarkMode} = useContext(DarkContext);
     const location = useLocation();
     const navigate = useNavigate();
     const emailRef = useRef(null);
@@ -65,7 +67,7 @@ const SingIn = () => {
     }
 
     return (
-        <div>
+        <div className="pb-5 md:pb-[10vh]">
         <div data-aos="flip-left"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="1000" className="flex justify-center pt-4">
@@ -86,7 +88,7 @@ const SingIn = () => {
                         <span onClick={() => setShowPassword(!showPassword)} className="absolute bottom-3.5 hidden md:block left-72">
 
                             {
-                                showPassword ? <AiFillEyeInvisible></AiFillEyeInvisible> : <AiFillEye></AiFillEye>
+                                showPassword ? <AiFillEyeInvisible className={`${isDarkMode ? 'text-black' : ''}`}></AiFillEyeInvisible> : <AiFillEye className={`${isDarkMode ? 'text-black' : ''}`}></AiFillEye>
                             }
 
                         </span>

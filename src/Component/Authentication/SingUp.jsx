@@ -4,9 +4,10 @@ import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "./AuthProvider";
+import { DarkContext } from "../Root/Root";
 
 const SingUp = () => {
-
+    const {isDarkMode} = useContext(DarkContext);
     const [showPassword, setShowPassword] = useState(false);
     const { createUser } = useContext(AuthContext);
 
@@ -61,9 +62,7 @@ const SingUp = () => {
     }
 
     return (
-        <div data-aos="flip-right"
-            data-aos-easing="ease-out-cubic"
-            data-aos-duration="1000" className="flex justify-center pt-4">
+        <div className="flex justify-center pt-4 pb-5 md:pb-[6vh]">
 
             <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
 
@@ -90,7 +89,7 @@ const SingUp = () => {
                         <span onClick={() => setShowPassword(!showPassword)} className="absolute bottom-3.5 hidden md:block left-72">
 
                             {
-                                showPassword ? <AiFillEyeInvisible></AiFillEyeInvisible> : <AiFillEye></AiFillEye>
+                                showPassword ? <AiFillEyeInvisible className={`${isDarkMode ? 'text-black' : ''}`}></AiFillEyeInvisible> : <AiFillEye className={`${isDarkMode ? 'text-black' : ''}`}></AiFillEye>
                             }
 
                         </span>

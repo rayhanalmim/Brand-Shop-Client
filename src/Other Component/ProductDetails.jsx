@@ -55,7 +55,7 @@ const ProductDetails = () => {
     },[temp]);
 
     return (
-        <div className="w-11/12 mx-auto mt-7">
+        <div className="w-11/12 mx-auto mt-7 pb-[20vh]">
             <div className="flex flex-col-reverse md:flex-row gap-4">
 
                 <div className="space-y-2 flex-1">

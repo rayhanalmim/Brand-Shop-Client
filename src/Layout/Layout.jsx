@@ -52,7 +52,6 @@ const Layout = createBrowserRouter([
             {
                 path:'/card',
                 element:<PrivateRoute><MyCard></MyCard></PrivateRoute>,
-                loader: ()=> fetch('http://localhost:5000/card'),
             }
         ]
     }

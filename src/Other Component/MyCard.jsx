@@ -2,9 +2,10 @@
 import Swal from "sweetalert2";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Component/Authentication/AuthProvider";
+import { DarkContext } from "../Component/Root/Root";
 
 const MyCard = () => {
-
+    const {isDarkMode} = useContext(DarkContext);
     const [products, setProducts] = useState([]);
 
     const { user } = useContext(AuthContext);
@@ -42,13 +43,13 @@ const MyCard = () => {
     }
 
     return (
-        <div className="w-11/12 mx-auto my-6">
+        <div className="w-11/12 mx-auto mt-6 pb-5 md:pb-[55vh]">
 
           
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {
                     products.length > 0 && products.map(card => <div key={card._id}>
-                        <div className="flex border rounded bg-slate-50">
+                        <div className={`flex border rounded ${isDarkMode ? '' : 'bg-gray-50'}`}>
                             <div className="w-1/2">
                                 <img className="rounded-l h-48 object-cover" src={card.photoUrl} alt="" />
                             </div>

@@ -2,10 +2,14 @@ import PropTypes from 'prop-types';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import Rating from 'react-rating';
 import { Link } from 'react-router-dom';
+import { DarkContext } from '../Component/Root/Root';
+import { useContext } from 'react';
 
 const ShowProduct = ({ dataInfo }) => {
+    const {isDarkMode} = useContext(DarkContext);
+
     return (
-        <div className="flex border rounded bg-slate-50">
+        <div className={`flex border rounded ${isDarkMode ? '' : 'bg-neutral-50'}`}>
             <div className="w-1/2">
                 <img className="rounded-l h-full object-cover" src={dataInfo.photoUrl} alt="" />
             </div>

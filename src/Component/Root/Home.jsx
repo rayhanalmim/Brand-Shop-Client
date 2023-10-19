@@ -2,14 +2,16 @@ import Marquee from "react-fast-marquee";
 import { useLoaderData } from "react-router-dom";
 import ShowBrand from "../../Other Component/ShowBrand";
 
+
 const Home = () => {
     const brandInfo = useLoaderData();
 
     // rayhanalmim1
     // mlRzlTCLnlvrTBil
 
+
     return (
-        <div>
+        <div >
 
             <div className="w-11/12 mx-auto">
                 <div className="bg-[url('https://i.ibb.co/s1mRmwP/Pngtree-5g-smart-phone-technology-banner-930357-1.jpg')] bg-cover bg-center h-full w-full rounded mb-4">
@@ -18,6 +20,7 @@ const Home = () => {
                         <p data-aos="fade-left" className="text-white font-medium">Your gateway to top tech brands. Explore, shop, and experience excellence in electronics. <br /> Renowned brands, your choice.</p>
                     </div>
                 </div>
+              
 
                 <div className="flex bg-slate-100 rounded w-10/12 mx-auto">
                     <button className="btn btn-active btn-secondarybtn-sm md:btn-md  ml-3 my-2 !bg-[#D72050] text-white">Top Brands,Your Way</button>
@@ -39,11 +42,11 @@ const Home = () => {
                     </Marquee>
                 </div>
 
-                    <div className="py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-                        {
-                            brandInfo.map(brand => <ShowBrand key={brand.name} brand={brand}></ShowBrand>)
-                        }
-                    </div>
+                <div className="py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                    {
+                        brandInfo.map(brand => <ShowBrand key={brand.name} brand={brand}></ShowBrand>)
+                    }
+                </div>
 
             </div>
             {/* ---------------footer-------------- */}

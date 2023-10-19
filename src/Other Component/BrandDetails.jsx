@@ -25,7 +25,7 @@ const BrandDetails = () => {
             <div className="">
                 {
                     data.length ? <div className="">
-                        <div className="mx-4 md:mx-14">
+                        <div className="mx-4  md:mx-14">
                             <Swiper
                                 slidesPerView={1}
                                 spaceBetween={30}
