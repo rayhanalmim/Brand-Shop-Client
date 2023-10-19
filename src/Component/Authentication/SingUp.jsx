@@ -15,6 +15,8 @@ const SingUp = () => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
+        const name = e.target.name.value;
+        const img = e.target.image.value;
 
         console.log(email, password)
 
@@ -44,7 +46,10 @@ const SingUp = () => {
             return;
         }
         createUser(email, password)
-            .then(() => {
+            .then((result) => {
+                result.user.displayName = name;
+                result.user.photoURL = img;
+                console.log(result.user.displayName);
                 e.target.reset();
                 toast.success('Congratulations! Account created successfully', {
                     position: "top-left",
@@ -72,6 +77,11 @@ const SingUp = () => {
                         <div>
                             <label className="block mb-2 text-sm font-medium text-gray-900 ">Enter Your Name</label>
                             <input type="text" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 " placeholder="Your Name" required />
+                        </div>
+
+                        <div>
+                            <label className="block mb-2 text-sm font-medium text-gray-900 ">Enter Your image URL</label>
+                            <input type="text" name="img" id="image" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 " placeholder="Your image URL" required />
                         </div>
 
                         <div>
