@@ -43,7 +43,7 @@ const MyCard = () => {
     }
 
     return (
-        <div className="w-11/12 mx-auto mt-6 pb-5 md:pb-[55vh]">
+        <div className="w-11/12 mx-auto mt-6 pb-[60vh]">
 
           
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

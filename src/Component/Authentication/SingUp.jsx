@@ -62,30 +62,30 @@ const SingUp = () => {
     }
 
     return (
-        <div className="flex justify-center pt-4 pb-5 md:pb-[6vh]">
+        <div className="flex justify-center pt-4 pb-[25vh]">
 
-            <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <div className="w-full max-w-sm p-4 bg-base-100 border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 text-black dark:border-gray-700">
 
                 <form onSubmit={handleSingUp} className="space-y-6">
-                    <h5 className="text-xl font-medium text-gray-900 dark:text-white">Create an account</h5>
+                    <h5 className="text-xl font-medium text-gray-900 ">Create an account</h5>
                     <div className="space-y-3">
                         <div>
-                            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Your Name</label>
-                            <input type="text" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Your Name" required />
+                            <label className="block mb-2 text-sm font-medium text-gray-900 ">Enter Your Name</label>
+                            <input type="text" name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 " placeholder="Your Name" required />
                         </div>
 
                         <div>
-                            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Enter Your Email</label>
-                            <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Email Address" required />
+                            <label className="block mb-2 text-sm font-medium text-gray-900 ">Enter Your Email</label>
+                            <input type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 " placeholder="Email Address" required />
                         </div>
 
                     </div>
                     <div className="relative">
-                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Create a password</label>
+                        <label className="block mb-2 text-sm font-medium text-gray-900 ">Create a password</label>
                         <input
 
                             type={!showPassword ? "password" : "text"}
-                            name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                            name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 " required />
                         <span onClick={() => setShowPassword(!showPassword)} className="absolute bottom-3.5 hidden md:block left-72">
 
                             {

@@ -67,24 +67,24 @@ const SingIn = () => {
     }
 
     return (
-        <div className="pb-5 md:pb-[10vh]">
+        <div className="pb-[20vh]">
         <div data-aos="flip-left"
             data-aos-easing="ease-out-cubic"
             data-aos-duration="1000" className="flex justify-center pt-4">
 
-            <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <div className="w-full max-w-sm p-4 text-black bg-base-100  border border-gray-200 rounded-lg shadow sm:p-6 md:p-8  dark:border-gray-700">
                 <form onSubmit={handleLogIn} className="space-y-6">
-                    <h5 className="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h5>
+                    <h5 className="text-xl font-medium text-gray-900 ">Sign in to our platform</h5>
                     <div>
-                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-                        <input ref={emailRef} type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required />
+                        <label className="block mb-2 text-sm font-medium text-gray-900 ">Your email</label>
+                        <input ref={emailRef} type="email" name="email" id="email" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 " placeholder="name@company.com" required />
                     </div>
                     <div className="relative">
-                        <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Create a password</label>
+                        <label className="block mb-2 text-sm font-medium text-gray-900 ">Create a password</label>
                         <input
 
                             type={!showPassword ? "password" : "text"}
-                            name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
+                            name="password" id="password" placeholder="••••••••" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 " required />
                         <span onClick={() => setShowPassword(!showPassword)} className="absolute bottom-3.5 hidden md:block left-72">
 
                             {
@@ -108,7 +108,7 @@ const SingIn = () => {
                     </div>
                 </form>
                 <div className="flex justify-center items-center pt-5">
-                    <button onClick={handleGoogleLogin} className="btn btn-outline"><span><FcGoogle className="text-xl"></FcGoogle></span>Sing In With Google</button>
+                    <button onClick={handleGoogleLogin} className="btn btn-outline text-white bg-gray-800"><span><FcGoogle className="text-xl"></FcGoogle></span>Sing In With Google</button>
                 </div>
             </div>
 

@@ -22,8 +22,8 @@ const Home = () => {
                 </div>
               
 
-                <div className="flex bg-slate-100 rounded w-10/12 mx-auto">
-                    <button className="btn btn-active btn-secondarybtn-sm md:btn-md  ml-3 my-2 !bg-[#D72050] text-white">Top Brands,Your Way</button>
+                <div className="flex bg-slate-100 rounded w-11/12 mx-auto">
+                    <button className="btn btn-active btn-secondarybtn-sm md:btn-md  ml-3 my-2 !bg-[#D72050] text-white">Our Brands</button>
                     <Marquee className="text-black font-medium">
                         <p className="pr-7">Apple</p>
                         <p className="pr-7">Samsung</p>
@@ -42,7 +42,7 @@ const Home = () => {
                     </Marquee>
                 </div>
 
-                <div className="py-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                <div className="py-4 px-1 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 justify-items-center items-center">
                     {
                         brandInfo.map(brand => <ShowBrand key={brand.name} brand={brand}></ShowBrand>)
                     }

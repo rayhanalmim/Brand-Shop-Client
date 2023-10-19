@@ -68,7 +68,7 @@ const Navbar = ({toggleMode}) => {
                 </ul>
             </div>
             <div className="navbar-end">
-            <button onClick={toggleMode} className={`mode-toggle ${user ? '' : 'pr-5'}`}>
+            <button onClick={toggleMode} className={`mode-toggle ${user ? 'pr-2 lg:pr-0' : 'pr-5'}`}>
                     {
                         isDarkMode ?  <MdOutlineLightMode className="text-2xl"></MdOutlineLightMode> : <MdDarkMode className="text-2xl"></MdDarkMode>
                     }
@@ -86,7 +86,7 @@ const Navbar = ({toggleMode}) => {
                     </div>
                 </label>
                 {
-                    user ? <Link onClick={handleLogOut} className={`btn w-28 btn-outline btn-sm ${isDarkMode ? 'text-white' : ''}`}>Logout</Link> : <Link to='/login' className="btn w-28 btn-outline btn-sm">Login</Link>
+                    user ? <Link onClick={handleLogOut} className={`btn w-28 btn-outline btn-sm ${isDarkMode ? 'text-white' : ''}`}>Logout</Link> : <Link to='/login' className={`btn w-28 btn-outline btn-sm ${isDarkMode ? 'text-white' : ''}`}>Login</Link>
                 }
             </div>
             <ToastContainer></ToastContainer>
