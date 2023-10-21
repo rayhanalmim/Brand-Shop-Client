@@ -9,7 +9,7 @@ const GoogleProvider = new GoogleAuthProvider();
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [looding, setLooding] = useState(true);
-
+    
     const singInWithGoogle = () =>{
         return signInWithPopup(auth, GoogleProvider);
     }

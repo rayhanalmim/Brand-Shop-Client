@@ -44,7 +44,7 @@ const Home = () => {
 
                 <div className="py-4 px-1 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 justify-items-center items-center">
                     {
-                        brandInfo.map(brand => <ShowBrand key={brand.name} brand={brand}></ShowBrand>)
+                        brandInfo.map(brand => <ShowBrand key={brand.id} brand={brand}></ShowBrand>)
                     }
                 </div>
 

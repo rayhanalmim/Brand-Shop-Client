@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "./AuthProvider";
 import { DarkContext } from "../Root/Root";
+import { updateProfile } from "firebase/auth";
 
 const SingUp = () => {
     const {isDarkMode} = useContext(DarkContext);
@@ -47,9 +48,18 @@ const SingUp = () => {
         }
         createUser(email, password)
             .then((result) => {
+                const currentUser = result.user;
                 result.user.displayName = name;
                 result.user.photoURL = img;
-                console.log(result.user.displayName);
+
+                updateProfile(currentUser,{
+                    displayName: name, 
+                    photoURL: img,
+                })
+
+                .then(()=>{})
+                .catch(error=>console.log(error))
+
                 e.target.reset();
                 toast.success('Congratulations! Account created successfully', {
                     position: "top-left",

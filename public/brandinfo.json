@@ -1,25 +1,31 @@
 [
     {
+      "id": 1,
       "brandName": "Apple",
       "imageURL": "https://i.ibb.co/PmS8rSD/disec3b1o-sin-tc3adtulo-3.jpg"
     },
     {
+      "id": 2,
       "brandName": "Samsung",
       "imageURL": "https://i.ibb.co/KGm9JRB/Who-is-the-Owner-of-Samsung-Wiki-1.webp"
     },
     {
+      "id": 3,
       "brandName": "Google",
       "imageURL": "https://i.ibb.co/qLSqwPF/a910d418-7123-4bc4-aa3b-ef7e25e74ae6-81843175e48a9129.webp"
     },
     {
+      "id": 4,
       "brandName": "Microsoft",
       "imageURL": "https://i.ibb.co/KVGy0Nr/msft-microsoft-logo-2-3.webp"
     },
     {
+      "id": 5,
       "brandName": "Huawei",
       "imageURL": "https://i.ibb.co/LxHDQ0G/huawei-logo.webp"
     },
     {
+      "id": 6,
       "brandName": "LG",
       "imageURL": "https://i.ibb.co/c3v3zPh/og-lg-logo.png"
     }
