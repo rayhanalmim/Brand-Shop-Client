@@ -46,7 +46,7 @@ const Layout = createBrowserRouter([
             },
             {
                 path:'/update/:id',
-                element:<UpdateProduct></UpdateProduct>,
+                element:<PrivateRoute><UpdateProduct></UpdateProduct></PrivateRoute>,
                 loader: ({params}) => fetch(`https://tech-and-electronic-server-h2b6gqyhd-rayhan-al-mims-projects.vercel.app/update/${params.id}`),
             },
             {
