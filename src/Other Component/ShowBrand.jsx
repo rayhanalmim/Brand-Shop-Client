@@ -12,9 +12,9 @@ const ShowBrand = ({ brand }) => {
     return (
         <div>
             <Link to={`/brand/${brandName}`}>
-                <div className={`${isDarkMode ? '' : 'bg-base-100'} card w-96 shadow-xl cursor-pointer text-3xl hover:text-rose-800`}>
-                    <figure><img className='h-48 object-cover w-full' src={imageURL} alt="Shoes" /></figure>
-                    <div className="card-body">
+                <div className={`${isDarkMode ? '' : 'bg-base-100'} p-5 px-8 card shadow-xl md:px-12 lg:px-12 xl:px-8  cursor-pointer text-2xl hover:text-rose-800`}>
+                    <figure><img className='object-cover h-28 rounded-full w-28' src={imageURL} alt="Shoes" /></figure>
+                    <div className="">
                         <div className='flex justify-center items-center'>
                             <h2 className="font-bold ">{brandName}</h2>
                         </div>

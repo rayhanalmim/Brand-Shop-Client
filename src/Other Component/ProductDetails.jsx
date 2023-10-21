@@ -29,7 +29,7 @@ const ProductDetails = () => {
 
 
 
-        fetch('https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/card', {
+        fetch('https://tech-and-electronic-server-h2b6gqyhd-rayhan-al-mims-projects.vercel.app/card', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -54,7 +54,7 @@ const ProductDetails = () => {
     }
 
     useEffect(()=>{
-          fetch('https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/card')
+          fetch('https://tech-and-electronic-server-h2b6gqyhd-rayhan-al-mims-projects.vercel.app/card')
           .then(res => res.json())
           .then(result => setCard(result));      
     },[temp]);

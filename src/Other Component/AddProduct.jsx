@@ -16,7 +16,7 @@ const AddProduct = () => {
         const data = { productName, category, company, price, photoUrl, rating, productDetails };
 
         console.log(data)
-        fetch('https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/product', {
+        fetch('https://tech-and-electronic-server-h2b6gqyhd-rayhan-al-mims-projects.vercel.app/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

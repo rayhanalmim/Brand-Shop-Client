@@ -12,7 +12,7 @@ const MyCard = () => {
     const email = user.email;
 
     useEffect(() => {
-        fetch(`https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/card/${email}`, {
+        fetch(`https://tech-and-electronic-server-h2b6gqyhd-rayhan-al-mims-projects.vercel.app/card/${email}`, {
             method: 'GET'
         })
             .then(res => res.json())
@@ -23,7 +23,7 @@ const MyCard = () => {
     const handleRemove = (id) => {
 
         console.log(id);
-        fetch(`https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/card/${id}`, {
+        fetch(`https://tech-and-electronic-server-h2b6gqyhd-rayhan-al-mims-projects.vercel.app/card/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

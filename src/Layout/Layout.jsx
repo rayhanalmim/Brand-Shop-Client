@@ -37,17 +37,17 @@ const Layout = createBrowserRouter([
             {
                 path:'/brand/:name',
                 element:<BrandDetails></BrandDetails>,
-                loader: ({params}) => fetch(`https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/product/${params.name}`)
+                loader: ({params}) => fetch(`https://tech-and-electronic-server-h2b6gqyhd-rayhan-al-mims-projects.vercel.app/product/${params.name}`)
             },
             {
                 path:'/productDetails/:id',
                 element:<PrivateRoute><ProductDetails></ProductDetails></PrivateRoute>,
-                loader: ({params}) => fetch(`https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/productDetails/${params.id}`)
+                loader: ({params}) => fetch(`https://tech-and-electronic-server-h2b6gqyhd-rayhan-al-mims-projects.vercel.app/productDetails/${params.id}`)
             },
             {
                 path:'/update/:id',
                 element:<UpdateProduct></UpdateProduct>,
-                loader: ({params}) => fetch(`https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/update/${params.id}`),
+                loader: ({params}) => fetch(`https://tech-and-electronic-server-h2b6gqyhd-rayhan-al-mims-projects.vercel.app/update/${params.id}`),
             },
             {
                 path:'/card',

@@ -1,13 +1,22 @@
 import Marquee from "react-fast-marquee";
 import { useLoaderData } from "react-router-dom";
 import ShowBrand from "../../Other Component/ShowBrand";
+import { useEffect } from "react";
+import { useState } from "react";
+import UserRevews from "./UserRevews";
 
 
 const Home = () => {
     const brandInfo = useLoaderData();
+    const [userReview, setUserReview] = useState([]);
 
-    // rayhanalmim1
-    // mlRzlTCLnlvrTBil
+    useEffect(() => {
+        fetch('https://tech-and-electronic-server-h2b6gqyhd-rayhan-al-mims-projects.vercel.app/review')
+            .then(res => res.json())
+            .then(result => setUserReview(result))
+    }, []);
+
+    console.log(userReview)
 
 
     return (
@@ -20,7 +29,7 @@ const Home = () => {
                         <p data-aos="fade-left" className="text-white font-medium">Your gateway to top tech brands. Explore, shop, and experience excellence in electronics. <br /> Renowned brands, your choice.</p>
                     </div>
                 </div>
-              
+
 
                 <div className="flex bg-slate-100 rounded w-11/12 mx-auto">
                     <button className="btn btn-active btn-secondarybtn-sm md:btn-md  ml-3 my-2 !bg-[#D72050] text-white">Our Brands</button>
@@ -42,7 +51,11 @@ const Home = () => {
                     </Marquee>
                 </div>
 
-                <div className="py-4 px-1 md:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4 justify-items-center items-center">
+                <div className="pt-5 pb-2 text-center">
+                    <h3 className="font-bold text-2xl md:text-3xl">Premium Brand Collection</h3>
+                </div>
+                <div className="pb-4 px-1 md:px-0 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-center xl:grid-cols-6 gap-4 mt-4 justify-items-center items-center">
+
                     {
                         brandInfo.map(brand => <ShowBrand key={brand.id} brand={brand}></ShowBrand>)
                     }
@@ -50,7 +63,16 @@ const Home = () => {
 
             </div>
 
-            <div data-aos="zoom-in" className="w-11/12 mx-auto py-5 space-y-1">
+            <div className="pt-10">
+                <h3 className="text-center font-bold text-3xl">Trusted By Thousands client</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-7 w-11/12 mx-auto">
+                    {
+                        userReview.map(review => <UserRevews review={review} key={review.id}></UserRevews>)
+                    }
+                </div>
+            </div>
+
+            <div className="w-11/12 mx-auto pb-5 space-y-1">
                 <h3 className="text-2xl font-medium">Get more updates...</h3>
                 <p>Do you want to get notified when we added something new? Sign up for our newsletter and youll be among the first to find out about new services, updated and more.</p>
                 <div className="flex gap-4 pt-1">
@@ -60,6 +82,7 @@ const Home = () => {
                     <button className="bg-blue-800 px-4 rounded-lg text-white">Subscribe</button>
                 </div>
             </div>
+
             {/* ---------------footer-------------- */}
             <footer className="footer mt-6 p-10 bg-neutral text-neutral-content">
                 <aside>

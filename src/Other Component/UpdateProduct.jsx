@@ -18,7 +18,7 @@ const UpdateProduct = () => {
         const data = { productName, category, company, price, photoUrl, rating };
 
         console.log(data)
-        fetch(`https://tech-and-electronic-server-kepsshe3n-rayhan-al-mims-projects.vercel.app/product/${product._id}`, {
+        fetch(`https://tech-and-electronic-server-h2b6gqyhd-rayhan-al-mims-projects.vercel.app/product/${product._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

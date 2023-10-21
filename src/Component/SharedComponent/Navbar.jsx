@@ -23,7 +23,9 @@ const Navbar = ({toggleMode}) => {
         {
             user && <li className={`${isDarkMode ? 'hover:bg-white hover:rounded-md' : ''}`}><NavLink to='/card'>My Card</NavLink></li>
         }
-        <li className={`${isDarkMode ? 'hover:bg-white hover:rounded-md' : ''}`}><NavLink to='/login'>Login</NavLink></li>
+        {
+            user ? '' : <li className={`${isDarkMode ? 'hover:bg-white hover:rounded-md' : ''}`}><NavLink to='/login'>Login</NavLink></li>
+        }
     </>
 
     const handleLogOut = () => {
